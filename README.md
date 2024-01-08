@@ -64,8 +64,8 @@ plt.xlabel('Purchase number')
 plt.ylabel('Count of Number of purchase')
 plt.show()
 ```
+<img width="598" alt="Screenshot 2024-01-08 at 8 40 22 PM" src="https://github.com/phanhoangminh99/RFM-Analysis/assets/115093313/f66bddc4-2886-4fd3-9d6d-de48720b2b39">
 
-<img width="621" alt="Screenshot 2024-01-08 at 11 19 12 AM" src="https://github.com/phanhoangminh99/Testing/assets/115093313/22f3cd04-2309-4d81-bc9b-651ad580efe4">
 
 ## More Data Preparation for RFM Analysis
 
@@ -138,7 +138,7 @@ fig.show()
 
 Visualize customer segments using a treemap and countplot to understand their distribution.
 
-<img width="944" alt="Screenshot 2024-01-08 at 11 28 50 AM" src="https://github.com/phanhoangminh99/Testing/assets/115093313/5f7fc39c-66b2-4b12-89aa-aad69742324d">
+<img width="925" alt="Screenshot 2024-01-08 at 8 37 20 PM" src="https://github.com/phanhoangminh99/RFM-Analysis/assets/115093313/a4c55a7a-d81c-4225-a2c2-282c101a9cdc">
 
 
 #### B. Visualize sales and profit by segmentation
@@ -152,7 +152,8 @@ plt.ylabel('Count of segmentation')
 plt.xticks(rotation=45)
 plt.show()
 ```
-<img width="624" alt="Screenshot 2024-01-08 at 11 30 36 AM" src="https://github.com/phanhoangminh99/Testing/assets/115093313/ae8ff4db-2fcc-48ba-b1c1-b92b81925a25">
+
+<img width="555" alt="Screenshot 2024-01-08 at 8 38 01 PM" src="https://github.com/phanhoangminh99/RFM-Analysis/assets/115093313/3832ac15-6b40-4caa-a704-95ff64342522">
 
 Analyze sales and profit by segmentation using bar plots to identify high-value segments.
 
@@ -182,8 +183,8 @@ plt.pie(Orders_RFM_channel["Channel_count"], labels=Orders_RFM_channel["Channel"
 plt.title('Percentage of channel')
 plt.show()
 ```
+<img width="449" alt="Screenshot 2024-01-08 at 8 38 38 PM" src="https://github.com/phanhoangminh99/RFM-Analysis/assets/115093313/8ca7a1ed-fcbf-4bef-801a-55663d8c1e47">
 
-<img width="414" alt="Screenshot 2024-01-08 at 11 32 21 AM" src="https://github.com/phanhoangminh99/Testing/assets/115093313/ccc8abd5-f2de-4fa8-80c1-121dc77c9368">
 
  ```php
 # Pie chart of Ship mode
@@ -193,7 +194,7 @@ plt.title('Percentage of Ship mode')
 plt.show()
 ```
 
-<img width="423" alt="Screenshot 2024-01-08 at 11 32 46 AM" src="https://github.com/phanhoangminh99/Testing/assets/115093313/1779711b-c77c-4f57-974b-1d40bd0acc50">
+<img width="428" alt="Screenshot 2024-01-08 at 8 38 49 PM" src="https://github.com/phanhoangminh99/RFM-Analysis/assets/115093313/7ad52c16-da05-49c0-98b9-8f0d713279d1">
 
 
 Next, we analyze sales by product category and sub-category using pie charts to understand product performance.
@@ -207,8 +208,8 @@ plt.title('Percentage of Category')
 plt.show()
 ```
 
-<img width="524" alt="Screenshot 2024-01-08 at 11 33 30 AM" src="https://github.com/phanhoangminh99/Testing/assets/115093313/94f44ba4-7704-4f1a-a69c-d05ce302e71f">
 
+<img width="545" alt="Screenshot 2024-01-08 at 8 39 04 PM" src="https://github.com/phanhoangminh99/RFM-Analysis/assets/115093313/1c09b835-2be5-4d8f-a972-33dca0855711">
 
 
  ```php
@@ -218,8 +219,8 @@ plt.pie(Orders_Product_subcategory["SubCategory_count"], labels=Orders_Product_s
 plt.title('Percentage of SubCategory')
 plt.show()
 ```
+<img width="519" alt="Screenshot 2024-01-08 at 8 39 16 PM" src="https://github.com/phanhoangminh99/RFM-Analysis/assets/115093313/de9a397d-9fd6-4512-aae6-16412bd3f020">
 
-<img width="480" alt="Screenshot 2024-01-08 at 11 34 12 AM" src="https://github.com/phanhoangminh99/Testing/assets/115093313/816143ef-99ed-43e5-8b1c-edf74a9fee2b">
 
 
 Then, we analyze sales and profit by segmentation using a bar plot 
@@ -238,8 +239,7 @@ plt.xticks(rotation=45)
 plt.show()
 ```
 
-<img width="647" alt="Screenshot 2024-01-08 at 11 34 59 AM" src="https://github.com/phanhoangminh99/Testing/assets/115093313/caafe51a-7054-4095-97b1-c5c70a2dd02c">
-
+<img width="599" alt="Screenshot 2024-01-08 at 8 39 31 PM" src="https://github.com/phanhoangminh99/RFM-Analysis/assets/115093313/c5e5d560-fb39-4061-89ef-e485f6ec2915">
 
 
  ```php
@@ -254,10 +254,11 @@ plt.ylabel('Total profit')
 plt.xticks(rotation=45)
 plt.show()
 ```
+<img width="558" alt="Screenshot 2024-01-08 at 8 39 46 PM" src="https://github.com/phanhoangminh99/RFM-Analysis/assets/115093313/2dad3c67-a0ba-4a98-a1ac-6a53bce7bdd7">
 
-<img width="643" alt="Screenshot 2024-01-08 at 11 35 12 AM" src="https://github.com/phanhoangminh99/Testing/assets/115093313/dee2edeb-56ce-4f4a-a8b9-4d269c1fb180">
 
 Finally, we want to identify sales by region using a bar plot to identify regional trends and potential geographic targeting opportunities.
+
 
  ```php
 # Total Sales by Region
@@ -272,4 +273,5 @@ plt.xticks(rotation=45)
 plt.show()
 ```
 
-<img width="639" alt="Screenshot 2024-01-08 at 11 35 41 AM" src="https://github.com/phanhoangminh99/Testing/assets/115093313/3c7826cf-504e-4adf-9be7-96a1b55490f2">
+<img width="577" alt="Screenshot 2024-01-08 at 8 39 55 PM" src="https://github.com/phanhoangminh99/RFM-Analysis/assets/115093313/acfb11c0-70c4-4865-948d-ba384003e019">
+
