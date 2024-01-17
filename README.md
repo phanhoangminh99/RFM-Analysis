@@ -54,20 +54,8 @@ Orders_R.fillna(value=0, inplace=True)
 Count_Frequency=Orders_R.groupby("Order ID").agg(Count_F=("Order ID","count")).reset_index()
 
 ```
-#### B. Visualize customer segmentation 
 
-
- ```php 
-sns.countplot(x=Count_Frequency["Count_F"])
-plt.title('Number of customer segmentation')
-plt.xlabel('Purchase number')
-plt.ylabel('Count of Number of purchase')
-plt.show()
-```
-<img width="598" alt="Screenshot 2024-01-08 at 8 40 22 PM" src="https://github.com/phanhoangminh99/RFM-Analysis/assets/115093313/f66bddc4-2886-4fd3-9d6d-de48720b2b39">
-
-
-## More Data Preparation for RFM Analysis
+## RFM Analysis
 
  #### A. Calculate RFM scores for each customer based on order history
 
@@ -105,32 +93,32 @@ Here I assign scores for Recency (how recently they purchased), Frequency (how o
 #### C. RFM Score Integration and Customer Grouping
 
  ```php
-# Integrate Recency, Frequency, and Monetary scores into RFM scores
+# Creating RFM Score Column
 df_customers["RFM_score"] = df_customers.apply(lambda row: str(row["Recency_score"])+
                                               str(row["Frequency_score"])+
                                               str(row["Monetary_score"]), axis=1)
-# Split and restructure RFM scores for further analysis
+# Splitting and restructuring RFM scores for further analysis
 RFM_Score['RFM_Score_List'] = RFM_Score['RFM Score'].str.split(', ')
 RFM_Score_split = RFM_Score.explode('RFM_Score_List')
 RFM_Score_split.drop(columns=["RFM Score"], inplace=True)
 RFM_Score_split.rename(columns={"RFM_Score_List": "RFM_score"}, inplace=True)
 
-# Merge customer RFM scores with original data and grouping by customer
+# Merging customer RFM scores with original data and grouping by customer
 customers_RFM = df_customers.merge(RFM_Score_split, how="left", on ="RFM_score")
 
-# Group orders and aggregating quantities by customer ID
+# Grouping orders and aggregating quantities by customer ID
 Orders_group= Orders_R.groupby(["Order ID", "Customer ID"])["Quantity"].sum().reset_index()
 
-# Merge customer RFM data with order quantities
+# Merging customer RFM data with order quantities
 Orders_RFM = customers_RFM.merge(Orders_group, how="left", on="Order ID").reset_index()
 ```
 
-## Customer Segmentation Analysis
+## Customer Segmentation Visualizations
 
- #### A. Create treemap and countplot for customer segmentation
+ #### A. Visualize customer segmentation with Treemap and Countplot 
 
  ```php
-# Build a treemap of customer segmentation
+# Building a treemap of customer segmentation
 treemap_data= Orders_RFM.groupby("Segment").agg(Segment_count=("Segment", "count")).reset_index()
 fig = px.treemap(treemap_data, path=['Segment'], values='Segment_count', title='Treemap of customer segmentation')
 fig.show()
@@ -141,7 +129,7 @@ Visualize customer segments using a treemap and countplot to understand their di
 <img width="925" alt="Screenshot 2024-01-08 at 8 37 20 PM" src="https://github.com/phanhoangminh99/RFM-Analysis/assets/115093313/a4c55a7a-d81c-4225-a2c2-282c101a9cdc">
 
 
-#### B. Visualize sales and profit by segmentation
+#### B. Visualize sales and profit by segmentation with Seaborn
 
  ```php
 # Seaborn Countplot of customer segmentation
@@ -157,7 +145,7 @@ plt.show()
 
 Analyze sales and profit by segmentation using bar plots to identify high-value segments.
 
-## Sales and Distribution Analysis:
+## Sales and Distribution Visualization:
 
 #### A. Data Preparation 
 
@@ -172,7 +160,7 @@ Product_new= Product.drop_duplicates(subset='Product ID')
 Orders_Product =Orders_RFM_m.merge(Product_new, how="left", on="Product ID")
 ```
 
-#### B. Visualizations for Various Metrics
+#### B. Visualizations 
 
 First, I'll explore the distribution of orders across channels (e.g., online, retail) and ship modes (e.g., standard, express) using pie charts.
 
